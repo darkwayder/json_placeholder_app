@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:json_placeholder_app/pages/pony_list_page.dart';
 
-import 'pages/home_page.dart';
+import 'pages/home/home_page.dart';
 
 // main() является главной функцией с которой начинается
 // выполнение приложения
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // указываем исходную страницу, которую мы создадим позже
+      // Наша главная страница с нижнем меню
       home: HomePage(),
     );
   }
