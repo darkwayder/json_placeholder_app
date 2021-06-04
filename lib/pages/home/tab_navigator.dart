@@ -13,8 +13,8 @@ class TabNavigator extends StatelessWidget {
   // tabItem - текущий пункт меню
   TabNavigator({this.navigatorKey, this.tabItem});
 
-  final GlobalKey<NavigatorState> navigatorKey;
-  final TabItem tabItem;
+  final GlobalKey<NavigatorState>? navigatorKey;
+  final TabItem? tabItem;
 
   @override
   Widget build(BuildContext context) {

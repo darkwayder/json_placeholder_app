@@ -3,17 +3,17 @@
 class Post {
   // все поля являются private
   // это сделано для инкапсуляции данных
-  final int _userId;
-  final int _id;
-  final String _title;
-  final String _body;
+  final int? _userId;
+  final int? _id;
+  final String? _title;
+  final String? _body;
 
   // создаем getters для наших полей
   // дабы только мы могли читать их
-  int get userId => _userId;
-  int get id => _id;
-  String get title => _title;
-  String get body => _body;
+  int? get userId => _userId;
+  int? get id => _id;
+  String? get title => _title;
+  String? get body => _body;
 
   // Dart позволяет создавать конструкторы с разными именами
   // В данном случае Post.fromJson(json) - это конструктор

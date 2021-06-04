@@ -8,8 +8,8 @@ import '../models/tab.dart';
 class HomeController extends ControllerMVC {
 
   // ссылка на объект самого контроллера
-  static HomeController _this;
-  static HomeController get controller => _this;
+  static HomeController? _this;
+  static HomeController? get controller => _this;
 
   // сам по себе factory конструктор не создает
   // экземляра класса HomeController
@@ -19,7 +19,7 @@ class HomeController extends ControllerMVC {
   // класса HomeController
   factory HomeController() {
     if (_this == null) _this = HomeController._();
-    return _this;
+    return _this!;
   }
 
   HomeController._();

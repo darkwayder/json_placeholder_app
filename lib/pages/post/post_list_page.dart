@@ -14,7 +14,7 @@ class PostListPage extends StatefulWidget {
 class _PostListPageState extends StateMVC {
 
   // ссылка на наш контроллер
-  PostController _controller;
+  late PostController _controller;
 
   // передаем наш контроллер StateMVC конструктору и
   // получаем на него ссылку
@@ -54,7 +54,7 @@ class _PostListPageState extends StateMVC {
         child: Text(
           state.error,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headline4.copyWith(color: Colors.red)
+          style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.red)
         ),
       );
     } else {

@@ -18,11 +18,11 @@ class MyBottomNavigation extends StatelessWidget {
   // и текущую выбранную вкладку
   MyBottomNavigation({this.currentTab, this.onSelectTab});
 
-  final TabItem currentTab;
+  final TabItem? currentTab;
   // ValueChanged<TabItem> - функциональный тип,
   // то есть onSelectTab является ссылкой на функцию,
   // которая принимает TabItem объект
-  final ValueChanged<TabItem> onSelectTab;
+  final ValueChanged<TabItem>? onSelectTab;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class MyBottomNavigation extends StatelessWidget {
         selectedFontSize: 13,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
-        currentIndex: currentTab.index,
+        currentIndex: currentTab!.index,
         // пункты меню
         items: [
           _buildItem(TabItem.POSTS),
@@ -43,7 +43,7 @@ class MyBottomNavigation extends StatelessWidget {
         // обработка нажатия на пункт меню
         // здесь мы делаем вызов функции onSelectTab,
         // которую мы получили через конструктор
-        onTap: (index) => onSelectTab(
+        onTap: (index) => onSelectTab!(
             TabItem.values[index]
         )
     );
@@ -58,16 +58,16 @@ class MyBottomNavigation extends StatelessWidget {
           color: _colorTabMatching(item),
         ),
         // указываем метку или название
-        label: tabs[item].name,
+        label: tabs[item]!.name,
     );
   }
 
   // получаем иконку элемента
-  IconData _iconTabMatching(TabItem item) => tabs[item].icon;
+  IconData? _iconTabMatching(TabItem item) => tabs[item]!.icon;
 
   // получаем цвет элемента
-  Color _colorTabMatching(TabItem item) {
-    return currentTab == item ? tabs[item].color : Colors.grey;
+  Color? _colorTabMatching(TabItem? item) {
+    return currentTab == item ? tabs[item!]!.color : Colors.grey;
   }
 
 }

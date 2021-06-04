@@ -31,13 +31,13 @@ class PostListItem extends StatelessWidget {
               ),
               padding: EdgeInsets.all(10),
               child: Text(
-                post.title,
+                post.title!,
                 textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),),
+                style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white),),
             ),
             Container(
               child: Text(
-                post.body,
+                post.body!,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               padding: EdgeInsets.all(10),

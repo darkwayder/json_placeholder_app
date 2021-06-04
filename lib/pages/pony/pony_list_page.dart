@@ -98,7 +98,7 @@ class PonyListPage extends StatelessWidget {
                       padding: EdgeInsets.all(15),
                       child: Text(
                           pony.name,
-                          style: Theme.of(context).textTheme.headline4.copyWith(color: Colors.white)
+                          style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white)
                       )
                   ),
                 ),

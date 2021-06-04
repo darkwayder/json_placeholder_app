@@ -60,7 +60,7 @@ class PonyDetailPage extends StatelessWidget {
                 child: Text(
                     // указываем имя pony
                     pony.name,
-                    style: Theme.of(context).textTheme.headline4.copyWith(color: Colors.white),
+                    style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white),
                 )
             ),
             Container(

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 // будет хранить основную информацию
 // об элементах меню
 class MyTab {
-  final String name;
-  final MaterialColor color;
-  final IconData icon;
+  final String? name;
+  final MaterialColor? color;
+  final IconData? icon;
 
   const MyTab({this.name, this.color, this.icon});
 }

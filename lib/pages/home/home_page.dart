@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends StateMVC {
 
   // ссылка на наш контроллер
-  HomeController _con;
+  HomeController? _con;
 
   // super вызывает конструктор StateMVC и передает
   // ему наш контроллер который наследуется от
@@ -45,11 +45,11 @@ class _HomePageState extends StateMVC {
       // на предыдущий: c заданий на альбомы, с альбомов на посты,
       // и после этого только выходим из приложения
       onWillPop: () async {
-          if (_con.currentTab != TabItem.POSTS) {
-            if (_con.currentTab == TabItem.TODOS) {
-              _con.selectTab(TabItem.ALBUMS);
+          if (_con!.currentTab != TabItem.POSTS) {
+            if (_con!.currentTab == TabItem.TODOS) {
+              _con!.selectTab(TabItem.ALBUMS);
             } else {
-              _con.selectTab(TabItem.POSTS);
+              _con!.selectTab(TabItem.POSTS);
             }
             return false;
           } else {
@@ -68,8 +68,8 @@ class _HomePageState extends StateMVC {
         ]),
         // MyBottomNavigation мы создадим позже
         bottomNavigationBar: MyBottomNavigation(
-          currentTab: _con.currentTab,
-          onSelectTab: _con.selectTab,
+          currentTab: _con!.currentTab,
+          onSelectTab: _con!.selectTab,
         ),
       ),);
   }
@@ -80,10 +80,10 @@ class _HomePageState extends StateMVC {
       // Offstage работает следующим образом:
       // если это не текущий выбранный элемент
       // в нижнем меню, то мы его скрываем
-      offstage: _con.currentTab != tabItem,
+      offstage: _con!.currentTab != tabItem,
       // TabNavigator мы создадим позже
       child: TabNavigator(
-        navigatorKey: _con.navigatorKeys[tabItem],
+        navigatorKey: _con!.navigatorKeys[tabItem] as GlobalKey<NavigatorState>?,
         tabItem: tabItem,
       ),
     );
