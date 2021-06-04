@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_placeholder_app/pages/pony_detail_page.dart';
+import 'package:json_placeholder_app/pages/pony/pony_detail_page.dart';
 
 // класс пони, который будет хранить имя и описание
 class Pony {

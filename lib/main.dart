@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_placeholder_app/pages/pony_list_page.dart';
+import 'package:json_placeholder_app/pages/pony/pony_list_page.dart';
 
 import 'pages/home/home_page.dart';
 

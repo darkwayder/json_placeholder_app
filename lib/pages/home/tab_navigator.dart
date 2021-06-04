@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:json_placeholder_app/pages/album_list_page.dart';
-import 'package:json_placeholder_app/pages/post_list_page.dart';
-import 'package:json_placeholder_app/pages/todo_list_page.dart';
+import 'package:json_placeholder_app/pages/album/album_list_page.dart';
+import 'package:json_placeholder_app/pages/post/post_list_page.dart';
+import 'package:json_placeholder_app/pages/todo/todo_list_page.dart';
 import '../../models/tab.dart';
 
-import '../pony_list_page.dart';
+import '../pony/pony_list_page.dart';
 
 class TabNavigator extends StatelessWidget {
   // TabNavigator принимает:
