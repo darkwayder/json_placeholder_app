@@ -25,5 +25,20 @@ class PostController extends ControllerMVC {
     }
   }
 
+  // добавление поста
+  // функция addPost будет принимать callback,
+  // через который мы будет получать ответ
+  void addPost(Post post, void Function(PostAdd) callback) async {
+    try {
+      final result = await repo.addPost(post);
+      // сервер вернул результат
+      callback(result);
+    } catch (error) {
+      // произошла ошибка
+      callback(PostAddFailure());
+    }
+  }
+
 
 }
+

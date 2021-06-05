@@ -31,4 +31,22 @@ class Repository {
       throw Exception("failed request");
     }
   }
+
+  // добавление поста на сервер
+  Future<PostAdd> addPost(Post post) async {
+    final url = Uri.parse("$SERVER/posts");
+    // делаем POST запрос, в качестве тела
+    // указываем JSON строку нового поста
+    final response = await http.post(url, body: post.toJson());
+    // если пост был успешно добавлен
+    if (response.statusCode == 201) {
+      // то говорим, что все ок
+      return PostAddSuccess();
+    } else {
+      // иначе ошибка
+      return PostAddFailure();
+    }
+  }
+
 }
+

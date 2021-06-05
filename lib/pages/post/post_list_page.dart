@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:json_placeholder_app/pages/post/post_detail_page.dart';
 import '../../controllers/post_controller.dart';
 import '../../models/post.dart';
 import 'post_list_item.dart';
@@ -36,7 +37,21 @@ class _PostListPageState extends StateMVC {
       appBar: AppBar(
         title: Text("Post List Page"),
       ),
-      body: _buildContent()
+      body: _buildContent(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => PostDetailPage()
+          )).then((value) {
+            if (value is PostAddSuccess) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Пост был успешно добавлен"))
+              );
+            }
+          });
+        },
+      ),
     );
   }
 
@@ -78,3 +93,6 @@ class _PostListPageState extends StateMVC {
 
 
 }
+
+
+

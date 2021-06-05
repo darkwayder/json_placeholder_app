@@ -1,5 +1,7 @@
 
 // сначала создаем объект самого поста
+import 'dart:convert';
+
 class Post {
   // все поля являются private
   // это сделано для инкапсуляции данных
@@ -14,6 +16,17 @@ class Post {
   int? get id => _id;
   String? get title => _title;
   String? get body => _body;
+
+  // добавим новый конструктор для поста
+  Post(this._userId, this._id, this._title, this._body);
+
+  // toJson() превращает Post в строку JSON
+  String toJson() {
+    return json.encode({
+      "title": _title,
+      "content": _body
+    });
+  }
 
   // Dart позволяет создавать конструкторы с разными именами
   // В данном случае Post.fromJson(json) - это конструктор
@@ -36,6 +49,14 @@ class PostList {
     }
   }
 }
+
+// у нас будут только два состояния
+abstract class PostAdd {}
+
+// успешное добавление
+class PostAddSuccess extends PostAdd {}
+// ошибка
+class PostAddFailure extends PostAdd {}
 
 // наше представление будет получать объекты
 // этого класса и определять конкретный его
