@@ -54,12 +54,28 @@ dev_dependencies:
     sdk: flutter
 
 # в данной секции вы можете подключить шрифты и assets файлы
-# об этом мы поговорим позже
 flutter:
 
   # указываем, что мы используем MaterialApp иконки и наше
   # приложение соответствует Material Design
   uses-material-design: true
+
+
+  # указываем кастомные шрифты
+  fonts:
+    # название семейства шрифтов
+    - family: Kalam
+      fonts:
+        # для каждого файла шрифта мы прописываем
+        # соответствующие параметры
+        - asset: fonts/Kalam-Regular.ttf
+          style: normal
+        - asset: fonts/Kalam-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: fonts/Kalam-Light.ttf
+          style: normal
+          weight: 300
 
   # прописываем директорию images
   # / указывает на то, что мы собираемся включить

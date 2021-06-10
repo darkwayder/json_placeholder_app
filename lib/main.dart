@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_placeholder_app/pages/pony/pony_list_page.dart';
+import 'package:json_placeholder_app/resources/theme.dart';
 
 import 'pages/home/home_page.dart';
 
@@ -27,10 +28,8 @@ class MyApp extends StatelessWidget {
       title: 'Json Placeholder App',
       // убираем баннер
       debugShowCheckedModeBanner: false,
-      // настройка темы, мы ещё вернёмся к этому
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      // указываем только что созданную тему
+      theme: usualTheme,
       // Наша главная страница с нижнем меню
       home: HomePage(),
     );
