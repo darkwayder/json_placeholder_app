@@ -19,13 +19,12 @@ class Repository {
   // мы возвращаем Future объект, потому что
   // fetchPhotos асинхронная функция
   // асинхронные функции не блокируют UI
-  Future<PostList> fetchPosts() async {
+  Future<PostList> fetchPosts({http.Client? client}) async {
     // сначала создаем URL, по которому
     // мы будем делать запрос
     final url = Uri.parse("$SERVER/posts");
     // делаем GET запрос
-    final response = await http.get(url);
-
+    final response =  (client == null) ? await http.get(url) : await client.get(url);
     // проверяем статус ответа
     if (response.statusCode == 200) {
       // если все ок то возвращаем посты
@@ -96,6 +95,11 @@ class Repository {
   }
 
 }
+
+
+
+
+
 
 
 
